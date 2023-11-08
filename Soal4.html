@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Keliling Jajar Genjang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="button"] {
+            background-color:  #008080;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color:  #008080;
+        }
+
+        p {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kalkulator Keliling Jajar Genjang</h1>
+    <form>
+        <label for="sisiA">Masukkan panjang sisi sejajar pertama (a):</label>
+        <input type="number" id="sisiA" name="sisiA" step="any" required><br><br>
+
+        <label for="sisiB">Masukkan panjang sisi sejajar kedua (b):</label>
+        <input type="number" id="sisiB" name="sisiB" step="any" required><br><br>
+
+        <input type="button" value="Hitung Keliling" onclick="hitungKelilingJajarGenjang()"><br><br>
+
+        <p>Keliling Jajar Genjang: <span id="kelilingJajarGenjang"></span></p>
+    </form>
+
+    <script>
+        function hitungKelilingJajarGenjang() {
+            // Mengambil nilai sisi sejajar pertama dan sisi sejajar kedua dari input pengguna
+            var sisiA = parseFloat(document.getElementById("sisiA").value);
+            var sisiB = parseFloat(document.getElementById("sisiB").value);
+
+            // Menghitung keliling jajar genjang
+            var keliling = 2 * (sisiA + sisiB);
+
+            // Menampilkan hasil perhitungan ke dalam elemen HTML
+            document.getElementById("kelilingJajarGenjang").textContent = keliling;
+        }
+    </script>
+</body>
+</html>

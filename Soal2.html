@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Luas Segitiga</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #FFDAB9; /* Warna latar belakang peach */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: #FF6347; /* Warna teks merah-coral */
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        input, button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #FF6347; /* Warna border merah-coral */
+            border-radius: 5px;
+        }
+
+        input[type="number"] {
+            width: 100px;
+        }
+
+        button {
+            background-color: #FF6347; /* Warna tombol merah-coral */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 120px;
+        }
+
+        button:hover {
+            background-color: #FF4500; /* Warna saat tombol dihover dark orange */
+        }
+
+        #hasil {
+            font-weight: bold;
+            margin: 20px 0;
+            color: #FF6347; /* Warna teks merah-coral */
+        }
+    </style>
+</head>
+<body>
+    <h1>Kalkulator Luas Segitiga</h1>
+    <p>Masukkan panjang alas: <input type="number" id="alas" min="0"></p>
+    <p>Masukkan tinggi: <input type="number" id="tinggi" min="0"></p>
+    <button onclick="hitungLuas()">Hitung Luas</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungLuas() {
+            var alas = document.getElementById('alas').value;
+            var tinggi = document.getElementById('tinggi').value;
+
+            // Validasi input
+            if (alas <= 0 || tinggi <= 0) {
+                document.getElementById('hasil').textContent = "Masukkan nilai yang valid untuk alas dan tinggi.";
+            } else {
+                var luas = 0.5 * alas * tinggi;
+                document.getElementById('hasil').textContent = "Luas segitiga adalah: " + luas;
+            }
+        }
+    </script>
+</body>
+</html>

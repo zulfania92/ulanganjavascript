@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound of Animals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color:#87CEEB;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #87CEEB;
+        }
+        #animal-sound {
+            font-size: 20px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sound of Animals</h1>
+        <p>Masukkan nama hewan</p>
+        <input type="text" id="animal-input">
+        <button onclick="displayAnimalSound()">Tampilkan Suara</button>
+        <p id="animal-sound"></p>
+    </div>
+
+    <script>
+        function displayAnimalSound() {
+            var animalInput = document.getElementById("animal-input").value.toLowerCase();
+            var animalSound = document.getElementById("animal-sound");
+
+            if (animalInput === "kucing") {
+                animalSound.innerHTML = "Suara kucing: Meong";
+            } else if (animalInput === "anjing") {
+                animalSound.innerHTML = "Suara anjing: Guguk";
+            } else {
+                animalSound.innerHTML = "Hewan tidak dikenali";
+            }
+        }
+    </script>
+</body>
+</html>

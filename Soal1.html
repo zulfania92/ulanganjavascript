@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Penilaian</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    margin: 10px;
+    font-size: 16px;
+}
+
+input {
+    padding: 10px;
+    border: 2px solid #9370DB;
+    border-radius: 5px;
+}
+
+button {
+    background-color:#9370DB;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #9370DB;
+}
+
+/* CSS untuk kotak hasil penilaian */
+#hasil {
+    background-color: #e1e1e1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Program Penilaian</h1>
+    <p>Masukkan nilai Anda: <input type="number" id="nilai" min="0" max="100"></p>
+    <button onclick="tampilkanPesan()">Tampilkan Pesan</button>
+    <p id="hasil"></p>
+
+    <script>
+        function tampilkanPesan() {
+            var nilai = document.getElementById('nilai').value;
+            var pesan = '';
+
+            if (nilai > 80) {
+                pesan = "SANGAT MEMUASKAN";
+            } else if (nilai >= 60 && nilai <= 80) {
+                pesan = "MEMUASKAN";
+            } else {
+                pesan = "JANGAN MENYERAH, COBA LAGI!";
+            }
+
+            document.getElementById('hasil').textContent = "Hasil penilaian: " + pesan;
+        }
+    </script>
+</body>
+</html>
